@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube RAG Chat",
+  "version": "1.0",
+  "description": "Chat with any YouTube video using AI",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://*.ngrok-free.app/*",
+    "https://*.ngrok-free.dev/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/watch*"],
+    "js": ["content.js"]
+  }]
+}

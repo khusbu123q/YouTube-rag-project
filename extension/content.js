@@ -1,0 +1,1 @@
+console.log("✅ YouTube RAG extension active!");

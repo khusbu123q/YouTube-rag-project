@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { width: 420px; min-height: 500px; padding: 16px; font-family: Arial; background: #0f0f0f; color: white; }
+    .header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .header h2 { color: #ff0000; font-size: 18px; }
+    #status { font-size: 12px; color: #aaa; padding: 8px 10px; background: #1a1a1a; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #ff0000; }
+    #chat-box { height: 320px; overflow-y: auto; border: 1px solid #333; padding: 12px; margin-bottom: 10px; border-radius: 8px; background: #1a1a1a; }
+    .user-msg { background: #1e3a5f; color: #90caf9; padding: 8px 12px; border-radius: 12px 12px 2px 12px; margin: 6px 0; font-size: 13px; text-align: right; }
+    .bot-msg { background: #1b3a2a; color: #a5d6a7; padding: 8px 12px; border-radius: 12px 12px 12px 2px; margin: 6px 0; font-size: 13px; }
+    .loading { color: #ffcc80; font-size: 13px; margin: 8px 0; padding: 8px 12px; background: #2a2a1a; border-radius: 8px; }
+    .input-row { display: flex; gap: 8px; }
+    #question { flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #444; background: #333; color: white; font-size: 13px; }
+    #question:focus { outline: none; border-color: #ff0000; }
+    #ask-btn { padding: 10px 16px; background: #ff0000; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: bold; }
+    #ask-btn:hover { background: #cc0000; }
+    #ask-btn:disabled { background: #555; cursor: not-allowed; }
+    .welcome { color: #888; font-size: 13px; text-align: center; margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>🎬 YouTube RAG Chat</h2>
+  </div>
+  <div id="status">⏳ Detecting video...</div>
+  <div id="chat-box">
+    <div class="welcome">Open a YouTube video and start asking questions!</div>
+  </div>
+  <div class="input-row">
+    <input type="text" id="question" placeholder="Ask something about this video..." disabled />
+    <button id="ask-btn" disabled>Ask</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
